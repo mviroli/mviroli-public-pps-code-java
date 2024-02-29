@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="u01.devices.DeviceManagerImplTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2024-02-29T18:33:13" hostname="mirko-XPS-15-9500" time="0.035">
+  <properties/>
+  <testcase name="allWorking()" classname="u01.devices.DeviceManagerImplTest" time="0.021"/>
+  <testcase name="allOn()" classname="u01.devices.DeviceManagerImplTest" time="0.001"/>
+  <testcase name="switchAllOff()" classname="u01.devices.DeviceManagerImplTest" time="0.002"/>
+  <testcase name="devices()" classname="u01.devices.DeviceManagerImplTest" time="0.003"/>
+  <testcase name="someNotWorking()" classname="u01.devices.DeviceManagerImplTest" time="0.001"/>
+  <testcase name="switchAllOn()" classname="u01.devices.DeviceManagerImplTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

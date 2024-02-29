@@ -1,0 +1,22 @@
+@startuml
+
+
+interface DeviceManager {
+    void addDevice(Device device);
+    void switchAllOn();
+    void switchAllOff();
+    boolean allOn();
+    boolean allWorking();
+}
+
+interface Device {
+    void on();
+    void off();
+    boolean isOn();
+    boolean isWorking();
+}
+
+DeviceManager -> Device
+DeviceManager <|.down. ControllerImpl
+Device <|.down. DeviceImpl
+@enduml

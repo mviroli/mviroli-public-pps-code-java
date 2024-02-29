@@ -1,0 +1,26 @@
+@startuml
+
+
+interface Controller {
+    void addDevice(Device device);
+    void setAllOn();
+    void setAllOff();
+    boolean allOn();
+}
+interface Device {
+
+    void on();
+
+    void off();
+
+    boolean isOn();
+
+}
+
+
+Controller -> Device
+Controller <|.down. ControllerImpl
+Device <|.down. TV
+Device <|.down. EternalTV
+TV <|-right- EternalTV
+@enduml

@@ -1,0 +1,47 @@
+@startuml
+
+interface Base {
+    void operation();
+}
+
+class ConcreteClass1{
+    void operation();
+}
+
+class ConcreteClass2{
+    void operation();
+}
+
+
+Base <|.. ConcreteClass1
+Base <|.. ConcreteClass2
+
+class Decorator{
+    -Base base;
+    void operation();
+}
+
+Base <|.. Decorator
+Base --* Decorator
+
+
+class ConcreteDecorator1{
+    void operation();
+}
+
+class ConcreteDecorator2{
+    void operation();
+    void operation2();
+}
+
+Decorator <|-- ConcreteDecorator1
+Decorator <|-- ConcreteDecorator2
+
+note left of Decorator
+// method operation implemented as:
+this.base.operation()
+end note
+
+
+
+@enduml

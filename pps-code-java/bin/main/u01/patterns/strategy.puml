@@ -1,0 +1,33 @@
+@startuml
+
+interface Strategy {
+    void callStrategy();
+}
+
+class ConcreteStrategy1{
+}
+
+Strategy <|.. ConcreteStrategy1
+
+class ConcreteStrategy2{
+}
+
+Strategy <|.. ConcreteStrategy2
+
+
+class C {
+    -Strategy strategy
+    --
+    void setStrategy(Strategy strategy)
+}
+
+Strategy -left-* C
+
+note right of C
+// using the strategy with:
+this.strategy.callStrategy()
+end note
+
+
+
+@enduml

@@ -1,0 +1,50 @@
+@startuml
+
+interface AbstractFactory {
+
+    Product1 createProduct1()
+    Product2 createProduct2()
+}
+
+class ConcreteFactoryA
+
+class ConcreteFactoryB
+
+interface Product1
+
+class ConcreteProduct1A
+class ConcreteProduct1B
+
+interface Product2
+
+class ConcreteProduct2A
+class ConcreteProduct2B
+
+
+AbstractFactory <|.down. ConcreteFactoryA
+AbstractFactory <|.down. ConcreteFactoryB
+Product1 <|.down. ConcreteProduct1A
+Product2 <|.down. ConcreteProduct2A
+Product1 <|.down. ConcreteProduct1B
+Product2 <|.down. ConcreteProduct2B
+ConcreteFactoryA -down-> Product1 : creates
+ConcreteFactoryA -down-> Product2 : creates
+ConcreteFactoryB -down-> Product1 : creates
+ConcreteFactoryB -down-> Product2 : creates
+
+note right of ConcreteFactoryA
+calls ConcreteProduct1A's constructor
+calls ConcreteProduct2A's constructor
+end note
+note left of ConcreteFactoryB
+calls ConcreteProduct1B's constructor
+calls ConcreteProduct2B's constructor
+end note
+
+class Creator
+
+Creator -left-> AbstractFactory : uses
+
+
+
+@enduml
