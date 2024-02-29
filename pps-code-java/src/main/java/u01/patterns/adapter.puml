@@ -1,0 +1,27 @@
+@startuml
+
+interface RequiredInterface {
+    void method1();
+    void method2();
+}
+
+class Adaptee{
+
+}
+
+class Adapter{
+    -Adaptee adaptee
+    void method1();
+    void method2();
+}
+
+RequiredInterface <|.. Adapter
+Adapter *-- Adaptee
+
+note right of Adapter
+Adapter redirects calls to method1 and method2 to this.adaptee
+end note
+
+
+
+@enduml

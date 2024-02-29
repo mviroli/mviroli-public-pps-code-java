@@ -1,0 +1,39 @@
+@startuml
+
+interface Builder {
+
+    Builder prop1(arg)
+    Builder prop2(arg)
+    Builder prop3(arg)
+    Product build()
+}
+
+class ConcreteBuilder {
+
+}
+
+interface Product
+
+class ConcreteProduct << package private >> {
+    ~ConcreteProduct(...)
+    ~setProp1(arg)
+    ~setProp2(arg)
+    ~setProp3(arg)
+}
+
+
+Builder <|.down. ConcreteBuilder
+Product <|.down. ConcreteProduct
+Builder -right-> Product : uses
+ConcreteBuilder -right-> ConcreteProduct : creates
+
+note bottom of ConcreteBuilder
+calls ConcreteProduct's construct
+end note
+
+class Creator
+
+Creator -right-> Builder : uses
+
+
+@enduml

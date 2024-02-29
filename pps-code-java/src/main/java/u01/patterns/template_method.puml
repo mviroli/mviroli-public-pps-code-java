@@ -1,0 +1,34 @@
+@startuml
+
+abstract class Base {
+
+    abstract void meth();
+
+    void templateMethod1();
+    void templateMethod2();
+
+}
+
+class Concrete1 {
+
+    void meth();
+}
+
+class Concrete2 {
+
+    void meth();
+}
+
+Base <|-- Concrete1
+Base <|-- Concrete2
+
+note right of Base
+// templateMethod1's body includes:
+this.meth()
+// templateMethod2's body includes:
+this.meth()
+end note
+
+
+
+@enduml
